@@ -1,0 +1,12 @@
+# Node.js dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Tailwind CSS generated files
+*.css
+*.css.map
+
+# Environment variables
+.env

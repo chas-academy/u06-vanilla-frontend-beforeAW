@@ -1,0 +1,18 @@
+{
+  "name": "tailwind-typescript-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc && postcss src/styles/index.css -o public/styles.css",
+    "watch": "tsc --watch & postcss src/styles/index.css -o public/styles.css --watch",
+    "start": "live-server public"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "tailwindcss": "^2.0.0",
+    "postcss": "^8.0.0",
+    "autoprefixer": "^10.0.0",
+    "live-server": "^1.2.1"
+  },
+  "dependencies": {}
+}
