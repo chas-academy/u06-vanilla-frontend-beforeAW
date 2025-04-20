@@ -40,3 +40,44 @@ async function renderWeaponsprofiles() {
 }
 
 document.addEventListener('DOMContentLoaded', renderWeaponsprofiles);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const weaponProfileForm = document.getElementById('add-weapon-profile-form');
+
+  if (weaponProfileForm) {
+    weaponProfileForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const weaponprofileNameInput = document.getElementById('weapon-name') as HTMLInputElement;
+      const weaponprofileName = weaponprofileNameInput?.value ?? '';
+
+      try {
+        const response = await fetch('https://u05-beforeaw-wh-40k-api.vercel.app/api/weapons', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name: weaponprofileName }),
+        });
+
+        if (response.ok) {
+          (weaponProfileForm as HTMLFormElement).reset();
+
+          const modal = document.getElementById('modal');
+          if (modal) {
+            modal.classList.add('hidden');
+          }
+
+          alert('Weapon profile added successfully!');
+        } else {
+          alert('Failed to add weapon profile. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+      }
+    });
+  } else {
+    console.log('[weapons.js] add-weapon-profile-form not found on this page – skipping.');
+  }
+});
