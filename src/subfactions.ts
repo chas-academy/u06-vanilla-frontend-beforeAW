@@ -1,4 +1,3 @@
-import { fetchFactions } from './factions.js';
 interface Subfaction {
   name: string;
   faction: {
@@ -52,6 +51,7 @@ async function populateFactionDropdown() {
   }
 
   try {
+    const { fetchFactions } = await import('./factions.js'); // Dynamically import fetchFactions
     const factions = await fetchFactions();
     factions.forEach((faction) => {
       const option = document.createElement('option');
