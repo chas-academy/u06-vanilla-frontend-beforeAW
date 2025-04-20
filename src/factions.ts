@@ -2,7 +2,7 @@ interface Faction {
   name: string;
 }
 
-async function fetchFactions(): Promise<Faction[]> {
+export async function fetchFactions(): Promise<Faction[]> {
   const response = await fetch('https://u05-beforeaw-wh-40k-api.vercel.app/api/factions');
   if (!response.ok) {
     const errorText = await response.text();
@@ -41,30 +41,43 @@ async function renderFactions() {
 
 document.addEventListener('DOMContentLoaded', renderFactions);
 
-const Factionform = document.getElementById('add-faction-form') as HTMLFormElement;
-form.addEventListener('submit', async (event) => {
-  event.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+  const factionForm = document.getElementById('add-faction-form');
 
-  const factionName = (document.getElementById('ability-name') as HTMLInputElement).value;
+  if (factionForm) {
+    factionForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
 
+      const factionNameInput = document.getElementById('faction-name') as HTMLInputElement;
+      const factionName = factionNameInput?.value ?? '';
 
-  try {
-    const response = await fetch('https://u05-beforeaw-wh-40k-api.vercel.app/api/factions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name: factionName}),
+      try {
+        const response = await fetch('https://u05-beforeaw-wh-40k-api.vercel.app/api/factions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name: factionName }),
+        });
+
+        if (response.ok) {
+          (factionForm as HTMLFormElement).reset();
+
+          const modal = document.getElementById('modal');
+          if (modal) {
+            modal.classList.add('hidden');
+          }
+
+          alert('Faction added successfully!');
+        } else {
+          alert('Failed to add faction. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+      }
     });
-
-    if (response.ok) {
-      form.reset();
-      modal.classList.add('hidden');
-    } else {
-      alert('Failed to add ability. Please try again.');
-    }
-  } catch (error) {
-    console.error('Error:', error);
-    alert('An error occurred. Please try again.');
+  } else {
+    console.log('[factions.js] add-faction-form not found on this page – skipping.');
   }
 });
