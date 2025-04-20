@@ -65,5 +65,73 @@ async function renderWeapons() {
     contentDiv.textContent = `Failed to load weapons. Error: ${error}`;
   }
 }
+async function populateWeaponsProfilesDropdown() {
+  const dropdown = document.getElementById('weapon-profile-dropdown') as HTMLSelectElement;
+  if (!dropdown) {
+    console.error('Weapon profile dropdown not found');
+    return;
+  }
 
-document.addEventListener('DOMContentLoaded', renderWeapons);
+  try {
+    const { fetchWeaponsprofiles } = await import('./weaponsprofiles.js'); // Dynamically import fetchWeaponsprofiles
+    const weaponsProfiles = await fetchWeaponsprofiles();
+    weaponsProfiles.forEach((profile) => {
+      const option = document.createElement('option');
+      option.value = profile.name;
+      option.textContent = profile.name;
+      dropdown.appendChild(option);
+    });
+  } catch (error) {
+    console.error('Error populating weapon profiles dropdown:', error);
+  }
+}
+
+const weaponForm = document.getElementById('add-weapon-form') as HTMLFormElement;
+weaponForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const weaponName = (document.getElementById('weapon-name') as HTMLInputElement).value;
+  const weaponType = (document.getElementById('weapon-type') as HTMLInputElement).value;
+  const weaponRange = (document.getElementById('weapon-range') as HTMLInputElement).value;
+  const weaponAttacks = parseInt((document.getElementById('weapon-attacks') as HTMLInputElement).value, 10);
+  const weaponSkill = parseInt((document.getElementById('weapon-skill') as HTMLInputElement).value, 10);
+  const weaponStrength = parseInt((document.getElementById('weapon-strength') as HTMLInputElement).value, 10);
+  const weaponArmorPenetration = parseInt((document.getElementById('weapon-armor-penetration') as HTMLInputElement).value, 10);
+  const weaponDamage = (document.getElementById('weapon-damage') as HTMLInputElement).value;
+  const selectedProfile = (document.getElementById('weapon-profile-dropdown') as HTMLSelectElement).value;
+
+  try {
+    const response = await fetch('https://u05-beforeaw-wh-40k-api.vercel.app/api/weapons', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: weaponName,
+        type: weaponType,
+        range: weaponRange,
+        attacks: weaponAttacks,
+        skill: weaponSkill,
+        strength: weaponStrength,
+        armorPenetration: weaponArmorPenetration,
+        damage: weaponDamage,
+        profile: selectedProfile,
+      }),
+    });
+
+    if (response.ok) {
+      weaponForm.reset();
+      alert('Weapon added successfully!');
+    } else {
+      alert('Failed to add weapon. Please try again.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('An error occurred. Please try again.');
+  }
+}); // <-- Closing parenthesis added here
+
+document.addEventListener('DOMContentLoaded', () => {
+  populateWeaponsProfilesDropdown();
+  renderWeapons();
+});

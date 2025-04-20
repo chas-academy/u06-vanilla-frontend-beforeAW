@@ -2,7 +2,7 @@ interface Weaponsprofile {
   name: string;
 }
 
-async function fetchWeaponsprofiles(): Promise<Weaponsprofile[]> {
+export async function fetchWeaponsprofiles(): Promise<Weaponsprofile[]> {
   const response = await fetch('https://u05-beforeaw-wh-40k-api.vercel.app/api/weaponsprofiles');
   if (!response.ok) {
     const errorText = await response.text();

@@ -33,12 +33,85 @@
     </div>
   </main>
 
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-gray-800 text-gray-300 rounded-lg shadow-lg p-6 w-96">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold text-yellow-500">Add Weapon</h2>
+        <button id="close-modal-btn" class="text-gray-400 hover:text-yellow-500 transition">&times;</button>
+      </div>
+      <form id="add-weapon-form" class="space-y-4">
+        <div>
+          <label for="weapon-name" class="block text-sm font-medium text-gray-300">Weapon Name:</label>
+          <input type="text" id="weapon-name" name="weapon-name"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter weapon name" required>
+        </div>
+        <div>
+          <label for="weapon-type" class="block text-sm font-medium text-gray-300">Weapon Type:</label>
+          <input type="text" id="weapon-type" name="weapon-type"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter weapon type (e.g., Ranged)" required>
+        </div>
+        <div>
+          <label for="weapon-range" class="block text-sm font-medium text-gray-300">Range:</label>
+          <input type="text" id="weapon-range" name="weapon-range"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter weapon range (e.g., 24\" )" required>
+        </div>
+        <div>
+          <label for="weapon-attacks" class="block text-sm font-medium text-gray-300">Attacks:</label>
+          <input type="number" id="weapon-attacks" name="weapon-attacks"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter number of attacks" required>
+        </div>
+        <div>
+          <label for="weapon-skill" class="block text-sm font-medium text-gray-300">Skill:</label>
+          <input type="number" id="weapon-skill" name="weapon-skill"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter skill (e.g., 4)" required>
+        </div>
+        <div>
+          <label for="weapon-strength" class="block text-sm font-medium text-gray-300">Strength:</label>
+          <input type="number" id="weapon-strength" name="weapon-strength"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter strength (e.g., 3)" required>
+        </div>
+        <div>
+          <label for="weapon-armor-penetration" class="block text-sm font-medium text-gray-300">Armor
+            Penetration:</label>
+          <input type="number" id="weapon-armor-penetration" name="weapon-armor-penetration"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter armor penetration (e.g., 0)" required>
+        </div>
+        <div>
+          <label for="weapon-damage" class="block text-sm font-medium text-gray-300">Damage:</label>
+          <input type="text" id="weapon-damage" name="weapon-damage"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter damage (e.g., 1)" required>
+        </div>
+        <div>
+          <label for="weapon-profile-dropdown" class="block text-sm font-medium text-gray-300">Weapon Profile:</label>
+          <select id="weapon-profile-dropdown"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            required>
+            <option value="" disabled selected>Select a weapon profile</option>
+          </select>
+        </div>
+        <button type="submit"
+          class="bg-yellow-500 text-gray-900 px-4 py-2 rounded hover:bg-yellow-600 w-full transition">
+          Add Weapon
+        </button>
+      </form>
+    </div>
+  </div>
+
   <footer class="bg-gray-800 py-4">
     <div class="container mx-auto text-center text-gray-400">
       <p>&copy; 2025 Warhammer. All rights reserved.</p>
     </div>
   </footer>
-  <script src="../dist/weapons.js"></script>
+  <script src="../dist/modal.js" type="module"></script>
+  <script src="../dist/weapons.js" type="module"></script>
 </body>
 
 </html>
