@@ -6,7 +6,6 @@ dist/
 public/dist/
 
 # Tailwind CSS generated files
-*.css
 *.css.map
 
 # Environment variables
