@@ -8,13 +8,63 @@
   <link href="/styles/index.css" rel="stylesheet">
 </head>
 
-<body>
-  <h1>Abilities</h1>
-  <nav>
-    <a href="index.html">Back to Home</a>
-  </nav>
-  <div id="content">
+<body class="bg-gray-900 text-gray-300 font-serif">
+  <header class="bg-gray-800 py-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <h1 class="text-3xl font-bold text-yellow-500">Warhammer Abilities</h1>
+      <nav>
+        <a href="index.html" class="bg-yellow-500 text-gray-900 px-4 py-2 rounded hover:bg-yellow-600 transition">
+          Home
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-2xl font-bold text-yellow-500">Abilities</h2>
+      <button id="open-modal-btn" class="bg-yellow-500 text-gray-900 px-4 py-2 rounded hover:bg-yellow-600 transition">
+        Add Ability
+      </button>
+    </div>
+
+    <div id="content" class="grid grid-cols-1 gap-4">
+    </div>
+  </main>
+
+  <!-- Modal Structure -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-gray-800 text-gray-300 rounded-lg shadow-lg p-6 w-96">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold text-yellow-500">Add Ability</h2>
+        <button id="close-modal-btn" class="text-gray-400 hover:text-yellow-500 transition">&times;</button>
+      </div>
+      <form id="add-ability-form" class="space-y-4">
+        <div>
+          <label for="ability-name" class="block text-sm font-medium text-gray-300">Ability Name:</label>
+          <input type="text" id="ability-name" name="ability-name"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter ability name" required>
+        </div>
+        <div>
+          <label for="ability-description" class="block text-sm font-medium text-gray-300">Ability Description:</label>
+          <textarea id="ability-description" name="ability-description"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter ability description" rows="3" required></textarea>
+        </div>
+        <button type="submit"
+          class="bg-yellow-500 text-gray-900 px-4 py-2 rounded hover:bg-yellow-600 w-full transition">
+          Add
+        </button>
+      </form>
+    </div>
   </div>
+  <footer class="bg-gray-800 py-4 mt-8">
+    <div class="container mx-auto text-center text-gray-400">
+      <p>&copy; 2025 Warhammer. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="../dist/modal.js" type="module"></script>
   <script src="../dist/abilities.js" type="module"></script>
 </body>
 

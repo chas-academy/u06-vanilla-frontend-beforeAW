@@ -42,3 +42,31 @@ async function renderAbilities() {
 }
 
 document.addEventListener('DOMContentLoaded', renderAbilities);
+
+const form = document.getElementById('add-ability-form') as HTMLFormElement;
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const abilityName = (document.getElementById('ability-name') as HTMLInputElement).value;
+  const abilityDescription = (document.getElementById('ability-description') as HTMLTextAreaElement).value;
+
+  try {
+    const response = await fetch('https://u05-beforeaw-wh-40k-api.vercel.app/api/abilities', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name: abilityName, description: abilityDescription }),
+    });
+
+    if (response.ok) {
+      form.reset();
+      modal.classList.add('hidden');
+    } else {
+      alert('Failed to add ability. Please try again.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('An error occurred. Please try again.');
+  }
+});
