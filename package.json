@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "vite build",
+    "build": "tsc && vite build",
     "watch": "vite",
     "start": "vite",
     "type-check": "tsc --noEmit"
