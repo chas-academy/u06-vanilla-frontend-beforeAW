@@ -2,17 +2,35 @@
   "name": "tailwind-typescript-app",
   "version": "1.0.0",
   "private": true,
-"scripts": {
-  "build": "tsc && npx postcss src/styles/index.css -o public/styles/index.css",
-  "watch": "tsc --watch & npx postcss src/styles/index.css -o public/styles/index.css --watch",
-  "start": "live-server public --port=5500"
-},
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite",
+    "start": "vite",
+    "type-check": "tsc --noEmit"
+  },
   "devDependencies": {
-    "autoprefixer": "^10.0.0",
-    "live-server": "^1.2.0",
-    "postcss": "^8.0.0",
-    "postcss-cli": "^11.0.1",
-    "tailwindcss": "^2.0.0",
-    "typescript": "^4.0.0"
+    "@tailwindcss/postcss": "^4.1.4",
+    "@tailwindcss/postcss7-compat": "^2.2.17",
+    "autoprefixer": "^10.4.21",
+    "tailwindcss": "^4.1.4",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.2"
+  },
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/jvJQvZ5i)",
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chas-academy/u06-vanilla-frontend-beforeAW.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chas-academy/u06-vanilla-frontend-beforeAW/issues"
+  },
+  "homepage": "https://github.com/chas-academy/u06-vanilla-frontend-beforeAW#readme",
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "micromatch": "^4.0.8"
   }
 }
