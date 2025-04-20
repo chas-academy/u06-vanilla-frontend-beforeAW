@@ -33,13 +33,78 @@
     </div>
   </main>
 
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-gray-800 text-gray-300 rounded-lg shadow-lg p-6 w-96">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold text-yellow-500">Add Figure</h2>
+        <button id="close-modal-btn" class="text-gray-400 hover:text-yellow-500 transition">&times;</button>
+      </div>
+      <form id="add-figure-form" class="space-y-4">
+        <div>
+          <label for="figure-name" class="block text-sm font-medium text-gray-300">Figure Name:</label>
+          <input type="text" id="figure-name" name="figure-name"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter figure name" required>
+        </div>
+        <div>
+          <label for="figure-movement" class="block text-sm font-medium text-gray-300">Movement:</label>
+          <input type="number" id="figure-movement" name="figure-movement"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter movement (e.g., 6)" required>
+        </div>
+        <div>
+          <label for="figure-toughness" class="block text-sm font-medium text-gray-300">Toughness:</label>
+          <input type="number" id="figure-toughness" name="figure-toughness"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter toughness (e.g., 3)" required>
+        </div>
+        <div>
+          <label for="figure-saves" class="block text-sm font-medium text-gray-300">Saves:</label>
+          <input type="number" id="figure-saves" name="figure-saves"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter saves (e.g., 5)" required>
+        </div>
+        <div>
+          <label for="figure-wounds" class="block text-sm font-medium text-gray-300">Wounds:</label>
+          <input type="number" id="figure-wounds" name="figure-wounds"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter wounds (e.g., 1)" required>
+        </div>
+        <div>
+          <label for="figure-leadership" class="block text-sm font-medium text-gray-300">Leadership:</label>
+          <input type="number" id="figure-leadership" name="figure-leadership"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter leadership (e.g., 7)" required>
+        </div>
+        <div>
+          <label for="figure-oc" class="block text-sm font-medium text-gray-300">OC:</label>
+          <input type="number" id="figure-oc" name="figure-oc"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter OC (e.g., 1)" required>
+        </div>
+        <div>
+          <label for="figure-invulnerable-save" class="block text-sm font-medium text-gray-300">Invulnerable
+            Save:</label>
+          <input type="number" id="figure-invulnerable-save" name="figure-invulnerable-save"
+            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+            placeholder="Enter invulnerable save (e.g., 0)" required>
+        </div>
+        <button type="submit"
+          class="bg-yellow-500 text-gray-900 px-4 py-2 rounded hover:bg-yellow-600 w-full transition">
+          Add Figure
+        </button>
+      </form>
+    </div>
+  </div>
+
   <footer class="bg-gray-800 py-4">
     <div class="container mx-auto text-center text-gray-400">
       <p>&copy; 2025 Warhammer. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="../dist/figures.js"></script>
+  <script src="../dist/modal.js" type="module"></script>
+  <script src="../dist/figures.js" type="module"></script>
 </body>
 
 </html>
