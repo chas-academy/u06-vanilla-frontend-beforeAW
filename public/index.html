@@ -8,20 +8,53 @@
     <link href="/styles/index.css" rel="stylesheet">
 </head>
 
-<body>
-    <h1>Warhammer 40k Frontend</h1>
-    <nav>
-        <ul>
-            <li><a href="factions.html">Factions</a></li>
-            <li><a href="subfactions.html">Subfactions</a></li>
-            <li><a href="figures.html">Figures</a></li>
-            <li><a href="units.html">Units</a></li>
-            <li><a href="weapons.html">Weapons</a></li>
-            <li><a href="weapon-profiles.html">Weapon Profiles</a></li>
-            <li><a href="abilities.html">Abilities</a></li>
-            <li><a href="keywords.html">Keywords</a></li>
-        </ul>
-    </nav>
+<body class="bg-gray-900 text-gray-300 font-serif flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-gray-800 py-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-3xl font-bold text-yellow-500">Warhammer 40k</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 flex-grow max-w-[1400px]">
+        <h2 class="text-2xl font-bold text-yellow-500 mb-6">Navigation</h2>
+        <nav>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <li><a href="factions.html"
+                        class="block bg-gray-800 text-gray-300 px-4 py-2 rounded hover:bg-yellow-500 hover:text-gray-900 transition">Factions</a>
+                </li>
+                <li><a href="subfactions.html"
+                        class="block bg-gray-800 text-gray-300 px-4 py-2 rounded hover:bg-yellow-500 hover:text-gray-900 transition">Subfactions</a>
+                </li>
+                <li><a href="figures.html"
+                        class="block bg-gray-800 text-gray-300 px-4 py-2 rounded hover:bg-yellow-500 hover:text-gray-900 transition">Figures</a>
+                </li>
+                <li><a href="units.html"
+                        class="block bg-gray-800 text-gray-300 px-4 py-2 rounded hover:bg-yellow-500 hover:text-gray-900 transition">Units</a>
+                </li>
+                <li><a href="weapons.html"
+                        class="block bg-gray-800 text-gray-300 px-4 py-2 rounded hover:bg-yellow-500 hover:text-gray-900 transition">Weapons</a>
+                </li>
+                <li><a href="weapon-profiles.html"
+                        class="block bg-gray-800 text-gray-300 px-4 py-2 rounded hover:bg-yellow-500 hover:text-gray-900 transition">Weapon
+                        Profiles</a></li>
+                <li><a href="abilities.html"
+                        class="block bg-gray-800 text-gray-300 px-4 py-2 rounded hover:bg-yellow-500 hover:text-gray-900 transition">Abilities</a>
+                </li>
+                <li><a href="keywords.html"
+                        class="block bg-gray-800 text-gray-300 px-4 py-2 rounded hover:bg-yellow-500 hover:text-gray-900 transition">Keywords</a>
+                </li>
+            </ul>
+        </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-4">
+        <div class="container mx-auto text-center text-gray-400">
+            <p>&copy; 2025 Warhammer 40k Frontend. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 
 </html>

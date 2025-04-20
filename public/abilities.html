@@ -8,8 +8,9 @@
   <link href="/styles/index.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-900 text-gray-300 font-serif">
-  <header class="bg-gray-800 py-4 shadow-lg">
+<body class="bg-gray-900 text-gray-300 font-serif flex flex-col min-h-screen">
+
+  <header class="bg-gray-800 py-4 shadow-lg sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center px-4">
       <h1 class="text-3xl font-bold text-yellow-500">Warhammer Abilities</h1>
       <nav>
@@ -20,7 +21,7 @@
     </div>
   </header>
 
-  <main class="container mx-auto px-4 py-8">
+  <main class="container mx-auto px-4 py-8 flex-grow">
     <div class="flex justify-between items-center mb-6">
       <h2 class="text-2xl font-bold text-yellow-500">Abilities</h2>
       <button id="open-modal-btn" class="bg-yellow-500 text-gray-900 px-4 py-2 rounded hover:bg-yellow-600 transition">
@@ -59,7 +60,7 @@
       </form>
     </div>
   </div>
-  <footer class="bg-gray-800 py-4 mt-8">
+  <footer class="bg-gray-800 py-4">
     <div class="container mx-auto text-center text-gray-400">
       <p>&copy; 2025 Warhammer. All rights reserved.</p>
     </div>
