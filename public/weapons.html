@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weapon profiles</title>
-  <link href="/styles/index.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-serif flex flex-col min-h-screen">
@@ -56,7 +56,7 @@
           <label for="weapon-range" class="block text-sm font-medium text-gray-300">Range:</label>
           <input type="text" id="weapon-range" name="weapon-range"
             class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
-            placeholder="Enter weapon range (e.g., 24\" )" required>
+            placeholder="Enter weapon range (e.g., 24&quot; )" required>
         </div>
         <div>
           <label for="weapon-attacks" class="block text-sm font-medium text-gray-300">Attacks:</label>
@@ -110,8 +110,8 @@
       <p>&copy; 2025 Warhammer. All rights reserved.</p>
     </div>
   </footer>
-  <script src="../dist/modal.js" type="module"></script>
-  <script src="../dist/weapons.js" type="module"></script>
+  <script type="module" src="../src/modal.ts"></script>
+  <script type="module" src="../src/weapons.ts"></script>
 </body>
 
 </html>

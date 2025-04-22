@@ -1,15 +1,16 @@
-import { defineConfig } from 'vite';
-import autoprefixer from 'autoprefixer';
-import tailwindcss from '@tailwindcss/postcss';
+
+import { defineConfig } from "vite";
+import { resolve } from 'path';
 
 export default defineConfig({
   root: 'public',
-  server: {
-    port: 5500,
+  build: {
+    outDir: '../dist',
+    emptyOutDir: true,
   },
-  css: {
-    postcss: {
-      plugins: [tailwindcss(), autoprefixer()],
-    },
+  resolve: {
+    alias: {
+      '/src': resolve(__dirname, 'src')
+    }
   },
 });
