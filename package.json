@@ -9,6 +9,7 @@
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {
+    "glob": "^11.0.1",
     "typescript": "^5.8.3",
     "vite": "^6.3.2"
   },
