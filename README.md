@@ -25,5 +25,5 @@
 
 The design for this project can be found in our Figma document:
 
-[Figma Design Link](https://www.figma.com/file/EXEMPEL/Projekt-Design)
+[[Figma Design Link](https://www.figma.com/design/e5u7Rn4uBDT4GVv75O1iUA/U06?node-id=0-1&t=64K4NsVOISgb6JHv-1)]
 
